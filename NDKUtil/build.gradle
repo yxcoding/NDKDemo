@@ -1,3 +1,4 @@
+// 注意这里 要将原来的com.android.library 改成 com.android.model.library
 apply plugin: 'com.android.model.library'
 
 model {
@@ -6,16 +7,19 @@ model {
         buildToolsVersion "23.0.3"
 
         defaultConfig {
+            // 注意 要添加.apiLevel ,否则会报错
             minSdkVersion.apiLevel 14
             targetSdkVersion.apiLevel 23
         }
         buildTypes {
             release {
                 minifyEnabled false
-                proguardFiles.add(file('proguard-android.txt'))
+                // 修改成add 的形式 添加混淆文件
+                proguardFiles.add(file('proguard-rules.pro'))
             }
         }
         ndk {
+            // 模块名称
             moduleName "ndkLib"
         }
     }
@@ -25,6 +29,7 @@ buildscript {
     repositories {
         jcenter()
     }
+    // 添加 gradle-experimental 依赖
     dependencies {
         classpath 'com.android.tools.build:gradle-experimental:0.7.2'
     }

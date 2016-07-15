@@ -5,7 +5,7 @@ package net.yxcoding.ndkutil;
  * Date: 2016-07-14
  * Time: 17:19
  * ------------- Description -------------
- * <p/>
+ * NDK Native 调用
  * ---------------------------------------
  */
 public class NDKUtil
