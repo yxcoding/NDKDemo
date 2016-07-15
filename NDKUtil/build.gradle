@@ -21,6 +21,8 @@ model {
         ndk {
             // 模块名称
             moduleName "ndkLib"
+            abiFilters.addAll(['armeabi', 'armeabi-v7a','x86'])
+            ldLibs.addAll(['log'])
         }
     }
 }
